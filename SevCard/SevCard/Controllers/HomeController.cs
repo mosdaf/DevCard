@@ -1,46 +1,36 @@
-﻿using DevCardMvc.Models;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using SevCard.Models;
 using System.Diagnostics;
 
-namespace DevCardMvc.Controllers
+namespace SevCard.Controllers
 {
     public class HomeController : Controller
     {
-
         public HomeController()
         {
-           
+            
         }
 
         public IActionResult Index()
         {
             return View();
         }
-
+        [HttpGet]
         public IActionResult Contact()
         {
-            var model = new Contact();
-            return View(model);
+            return View();
         }
-        //[HttpPost]
-        //public JsonResult Contact(IFormCollection form)
-        //{
-        //    return Json(Ok());
-        //}
-
         [HttpPost]
-        public IActionResult Contact(Contact formContact)
+        public IActionResult Contact(Contact form)
         {
             if (!ModelState.IsValid)
             {
                 ViewBag.error = "اطلاعات وارد شده صحیح نیست. لطفا دوباره تلاش کنید.";
-                return View(formContact);
+                return View(form);
             }
-
-            ViewBag.success = "نظر شما با موفقیت ثبت شد.";
+            ViewBag.success = "پیام شما با موفقیت ارسال شد.";
             return View();
         }
-
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
