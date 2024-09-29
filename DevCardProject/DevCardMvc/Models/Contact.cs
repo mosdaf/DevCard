@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace DevCardMvc.Models
 {
@@ -10,7 +11,9 @@ namespace DevCardMvc.Models
         [EmailAddress(ErrorMessage = "ایمیل صحیح نیست.")]
         [Required(ErrorMessage = "این فیلد اجباری است.")]
         public string Email { get; set; }
-        public string Services { get; set; }
+        public int Service { get; set; }
         public string Message { get; set; }
+
+        public SelectList Services { get; set; }
     }
 }
