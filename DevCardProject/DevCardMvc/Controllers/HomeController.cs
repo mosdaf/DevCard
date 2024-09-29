@@ -45,7 +45,6 @@ namespace DevCardMvc.Controllers
                 ViewBag.error = "اطلاعات وارد شده صحیح نیست. لطفا دوباره تلاش کنید.";
                 return View(formContact);
             }
-
             formContact = new Contact
             {
                 Services = new SelectList(_services, "Id", "Name")

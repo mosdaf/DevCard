@@ -58,14 +58,15 @@
 
         @if (!string.IsNullOrWhiteSpace(ViewBag.success))
         {
-            <div class="alert-success" p-5>
+            <div class="bg-success">
                 <p>@ViewBag.success</p>
+                <p> Mostafa fattahi</p>
             </div>
         }
         
         @if (string.IsNullOrWhiteSpace(ViewBag.error))
         {
-            <div class="alert-danger" p-5>
+            <div p-5>
                 <p>@ViewBag.error </p>
             </div>
         }
